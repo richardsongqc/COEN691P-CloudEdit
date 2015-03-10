@@ -15,24 +15,14 @@
 		to avoid double create the movieController bean.
                 Only controller need this hack.
 	-->
-	<context:component-scan base-package="com.cloudEdit.controller">
-		<context:exclude-filter type="regex"
-			expression="com.cloudEdit.controller.Movie.*" />
-	</context:component-scan>
+    <context:component-scan base-package="com.cloudEdit.controller">
+    </context:component-scan>
  
 	<mvc:annotation-driven />
  
-	<!-- Bean to show you Di in GAE, via Spring, also init the MovieController -->
-	<bean class="com.cloudEdit.controller.MovieController">
-		<property name="message">
-			<value>Hello World</value>
-		</property>
-	</bean>
- 
-	<bean
-	   class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/pages/</value>
+			<value>/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>

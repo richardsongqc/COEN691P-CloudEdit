@@ -5,8 +5,7 @@
 <!-- "Quirks Mode". Replacing this declaration     -->
 <!-- with a "Standards Mode" doctype is supported, -->
 <!-- but may lead to some differences in layout.   -->
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <title>Cloud Edit</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,16 +21,19 @@
 				<div class="nav_menu">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="support.html">Support</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
+						<%if(null == session.getAttribute("facebook")) {%>
+						<li><a href="/login">Sign in</a></li>
+						<%}%>
+						<%if(null != session.getAttribute("facebook")){%>
+						<li><a href="/profile">${facebook.name}</a></li>
+						<li><a href="/logout">Log out</a>
+						<%}%>
 					</ul>
 				</div>
 				<div class="clr"></div>
 				<div class="logo">
 					<h1>
-						<a href="index.html">ImagePro</a>
+						<a href="index.jsp">ImagePro</a>
 					</h1>
 				</div>
 			</div>
@@ -41,8 +43,8 @@
 				<div class="mainbar">
 					<div class="article">
 						<h2>Log in</h2>
-						<img src="images/facebook-login.jpg" width="230" height="43"
-							alt="" class="ilf" />
+						<a href="login"><img src="images/facebook-login.jpg" width="230" height="43"
+							alt="" class="ilf" /></a>
 						<div class="clr"></div>
 					</div>
 					<div>

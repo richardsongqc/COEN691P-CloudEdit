@@ -24,7 +24,7 @@ a { color:#0588c6; text-decoration:underline;}
 .header .nav_menu ul { padding:0 16px; float:right; width:auto; list-style:none; height:53px; background:url(images/menu.gif) repeat-x top;}
 .header .nav_menu ul li { margin:0 2px; float:left; height:53px;}
 .header .nav_menu ul li a { display:block; margin:0; padding:14px 8px; color:#5f5f5f; text-decoration:none; font-weight:bold;}
-.header .nav_menu ul li a:hover, .header .nav_menu ul li.active a { color:#47add9; background:url(images/menu_a.gif) repeat-x top;}
+.header .nav_menu ul li a:hover, .header .nav_menu ul li.active a { color:#47add9;}
 .header img.hbgimg { margin:0; padding:2px 2px 0 0;}
 .header .logo { background:url(images/hbg_img.png) no-repeat center 24px; height:180px; padding-top:120px;}
 
