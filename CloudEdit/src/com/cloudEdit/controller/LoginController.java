@@ -19,26 +19,29 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String Login(HttpServletRequest request) {
-		Facebook facebook = new FacebookFactory().getInstance();
+		
+		// set facebook instance as an http attribute 
+		Facebook facebook = FacebookOAuthService.GetInstance().GetFacebookInstance();
         request.getSession().setAttribute("facebook", facebook);
+        
+        // prepare callback URL
         StringBuffer callbackURL = request.getRequestURL();
         int index = callbackURL.lastIndexOf("/");
         callbackURL.replace(index, callbackURL.length(), "").append("/login_callback");
-        String authorizationURL = facebook.getOAuthAuthorizationURL(callbackURL.toString());
+        
+        String authorizationURL = FacebookOAuthService.GetInstance().GetOAuthAuthorizationURL(callbackURL.toString());
+        
+        // redirect
 		return "redirect:" + authorizationURL;
 	}
 	
 	@RequestMapping(value = "/login_callback", method = RequestMethod.GET)
 	public String LoignCallback(HttpServletRequest request) throws ServletException
 	{
-        Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
         String oauthCode = request.getParameter("code");
-        try {
-            facebook.getOAuthAccessToken(oauthCode);
-        } catch (FacebookException e) {
-            throw new ServletException(e);
-        }
+		FacebookOAuthService.GetInstance().GetOAuthAccessToken(oauthCode);
         
+		// redirect
         String contextPath = request.getContextPath() + "index";
         return contextPath;
 	}
@@ -46,13 +49,7 @@ public class LoginController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String Logout(HttpServletRequest request) throws ServletException
 	{
-        Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
-        String accessToken = "";
-        try {
-        	accessToken = facebook.getOAuthAccessToken().getToken();
-        } catch (Exception e) {
-            throw new ServletException(e);
-        }
+        String accessToken = FacebookOAuthService.GetInstance().GetOAuthAccessToken();
         request.getSession().invalidate();
 
         // Log Out of the Facebook

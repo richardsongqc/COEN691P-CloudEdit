@@ -34,6 +34,11 @@ public class FacebookOAuthService {
 		return _facebook.getOAuthAuthorizationURL(callbackURL);
 	}
 	
+	public String GetOAuthAccessToken()
+	{
+		return _facebook.getOAuthAccessToken().getToken();
+	}
+	
 	public String GetOAuthAccessToken(String oauthCode)
 	{
 		try {
