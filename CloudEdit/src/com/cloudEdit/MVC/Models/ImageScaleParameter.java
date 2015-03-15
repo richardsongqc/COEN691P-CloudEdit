@@ -1,4 +1,4 @@
-package com.cloudEdit.MVC1.Models;
+package com.cloudEdit.MVC.Models;
 
 public class ImageScaleParameter extends ImageParameter {
 
