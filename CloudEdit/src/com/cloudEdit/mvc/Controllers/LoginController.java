@@ -1,4 +1,4 @@
-package com.cloudEdit.controller;
+package com.cloudEdit.MVC.Controllers;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
