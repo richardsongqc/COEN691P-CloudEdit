@@ -1,4 +1,4 @@
-package com.cloudEdit.MVC.Models;
+package com.cloudEdit.MVC1.Models;
 
 public class DbAccount {
 	private String userName, password;

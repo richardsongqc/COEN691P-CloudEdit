@@ -1,6 +1,6 @@
 package com.cloudEdit.Service.DataAccess;
 
-import com.cloudEdit.MVC.Models.DbAccount;
+import com.cloudEdit.MVC1.Models.DbAccount;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;

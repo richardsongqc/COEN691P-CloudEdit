@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import com.cloudEdit.MVC.Models.*;
+import com.cloudEdit.MVC1.Models.*;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.Transformation;
 
