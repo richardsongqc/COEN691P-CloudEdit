@@ -10,6 +10,7 @@
 <title>Cloud Edit</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="rnu2jv1ajih16a1"></script>
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/arial.js"></script>
 <script type="text/javascript" src="js/cuf_run.js"></script>
@@ -51,6 +52,7 @@
 						<div class="article" style="float: right; display: block">
 							<h2>Image conversion in the cloud</h2>
 							<img src="images/cloud.png" width="100" height="110" alt="" />
+							<a href="#" class=" dropbox-dropin-btn dropbox-dropin-default"><span class="dropin-btn-status"></span>Choose from Dropbox</a>
 							<p>There is no need to install any software on your computer!
 								Select your files from Dropbox and we will do the job for you.</p>
 							<div class="clr"></div>
