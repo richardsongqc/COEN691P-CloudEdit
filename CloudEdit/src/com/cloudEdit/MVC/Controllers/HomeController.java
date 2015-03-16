@@ -13,6 +13,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Login(HttpServletRequest request) {
-		return request.getContextPath() + "index";
+		request.setAttribute("page", "index.jsp");
+		return request.getContextPath() + "_layout";
 	}
 }

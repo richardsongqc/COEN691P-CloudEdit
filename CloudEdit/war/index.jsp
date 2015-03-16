@@ -1,189 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-<html>
-<head>
-<title>Cloud Edit</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="rnu2jv1ajih16a1"></script>
-<script type="text/javascript" src="js/cufon-yui.js"></script>
-<script type="text/javascript" src="js/arial.js"></script>
-<script type="text/javascript" src="js/cuf_run.js"></script>
-</head>
-<body>
-	<div class="main">
-		<div class="header">
-			<div class="header_resize">
-				<div class="nav_menu">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<%if(null == session.getAttribute("facebook")) {%>
-						<li><a href="/login">Sign in</a></li>
-						<%}%>
-						<%if(null != session.getAttribute("facebook")){%>
-						<li><a href="/profile">${facebook.name}</a></li>
-						<li><a href="/logout">Log out</a>
-						<%}%>
-					</ul>
-				</div>
-				<div class="clr"></div>
-				<div class="logo">
-					<h1>
-						<a href="index.jsp">ImagePro</a>
-					</h1>
-				</div>
-			</div>
-		</div>
-		<div class="content">
-			<div class="content_resize">
-				<div class="mainbar">
-					<div class="article">
-						<h2>Log in</h2>
-						<a href="login"><img src="images/facebook-login.jpg" width="230" height="43"
-							alt="" class="ilf" /></a>
-						<div class="clr"></div>
-					</div>
-					<div>
-						<div class="article" style="float: right; display: block">
-							<h2>Image conversion in the cloud</h2>
-							<img src="images/cloud.png" width="100" height="110" alt=""/>
-							<div id="container"></div>
-							<a id="link"></a>
-							<script>
-						            options = {
-						                // Required. Called when a user selects an item in the Chooser.
-						                success: function(files) {
-						                    var linkTag = document.getElementById('link');
-						                    linkTag.href = files[0].link;
-						                    linkTag.textContent = files[0].link;
-						                    alert("Here's the file link: " + files[0].link)
-						                },
-						
-						                // Optional. Called when the user closes the dialog without selecting a file
-						                // and does not include any parameters.
-						                cancel: function() {
-						
-						                },
-						
-						                // Optional. "preview" (default) is a preview link to the document for sharing,
-						                // "direct" is an expiring link to download the contents of the file. For more
-						                // information about link types, see Link types below.
-						                linkType: "preview", // or "direct"
-						
-						                // Optional. A value of false (default) limits selection to a single file, while
-						                // true enables multiple file selection.
-						                multiselect: false, // or true
-						
-						                // Optional. This is a list of file extensions. If specified, the user will
-						                // only be able to select files with these extensions. You may also specify
-						                // file types, such as "video" or "images" in the list. For more information,
-						                // see File types below. By default, all extensions are allowed.
-						                extensions: ['.pdf', '.doc', '.docx'],
-						            };    
-						            
-						            var button = Dropbox.createChooseButton(options);
-						        document.getElementById('container').appendChild(button);
-						    </script>
-							<p>There is no need to install any software on your computer!
-								Select your files from Dropbox and we will do the job for you.</p>
-							<div class="clr"></div>
-						</div>
-						<div class="clr"></div>
-						<div class="article" style="float: right; display: block">
-							<h2>Multiples supported formats</h2>
-							<img src="images/cloud.png" width="100" height="110" alt="" />
-							<p>There is no need to install any software on your computer!
-								Select your files from Dropbox and we will do the job for you.</p>
-							<div class="clr"></div>
-						</div>
-					</div>
-				</div>
-				<div class="clr"></div>
-			</div>
-		</div>
-		<div class="fbg">
-			<div class="fbg_resize">
-				<div class="col c1">
-					<h2>Image Gallery</h2>
-					<a href="#"><img src="images/pix1.jpg" width="56" height="56"
-						alt="" class="ad" /></a> <a href="#"><img src="images/pix2.jpg"
-						width="56" height="56" alt="" class="ad" /></a> <a href="#"><img
-						src="images/pix3.jpg" width="56" height="56" alt="" class="ad" /></a>
-					<a href="#"><img src="images/pix4.jpg" width="56" height="56"
-						alt="" class="ad" /></a>
-					<div class="clr"></div>
-					<h2>Lorem Ipsum</h2>
-					<p>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-						libero. <a href="#">Suspendisse bibendum</a>. Cras id urna. Morbi
-						tincidunt, orci ac convallis aliquam, lectus turpis. Donec semper
-						vulputate nibh id pharetra. Sed sit amet aliquet ligula.
-						Pellentesque molestie sem eu dolor luctus egestas auctor elit
-						vestibulum.
-					</p>
-				</div>
-				<div class="col c2">
-					<h2>Lorem Ipsum</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Curabitur dui nunc, molestie ut porta et, egestas vel justo.
-						Mauris nec velit in libero sollicitudin adipiscing non sodales
-						sem. Fusce rutrum mauris quis purus vulputate placerat.</p>
-					<p>
-						Praesent nulla ipsum, congue in tincidunt ut, placerat sed erat. <a
-							href="#">Nunc tempor venenatis vehicula</a>. Integer placerat
-						ultricies sapien, non pharetra tortor egestas ut. Etiam elit
-						dolor, congue eu iaculis non, mollis sed urna. Donec bibendum
-						semper nisi non elementum.<br /> Vestibulum imperdiet mattis
-						metus quis.
-					</p>
-				</div>
-				<div class="col c3">
-					<h2>Contact</h2>
-					<p>Praesent dapibus, neque id cursus faucibus.</p>
-					<p>
-						<strong>Phone:</strong> +1234567<br /> <strong>Address:</strong>
-						123 Put Your Address<br /> <strong>E-mail:</strong> <a href="#">info@example.com</a>
-					</p>
-					<h2>Services</h2>
-					<ul class="sb_menu">
-						<li><a href="#">consequat molestie</a></li>
-						<li><a href="#">sem justo</a></li>
-						<li><a href="#">semper</a></li>
-					</ul>
-				</div>
-				<div class="clr"></div>
-			</div>
-		</div>
-		<div class="footer">
-			<div class="footer_resize">
-				<p class="lf">
-					&copy; Copyright MyWebSite. Designed by Blue <a
-						href="http://www.bluewebtemplates.com/">Website Templates</a>
-				</p>
-				<ul class="fmenu">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="support.html">Support</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="contact.html">Contacts</a></li>
-				</ul>
-			</div>
-			<div class="clr"></div>
-		</div>
-	</div>
-</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-43091346-1', 'devzone.co.in');
-  ga('send', 'pageview');
-</script>
-</html>
 
+		<!-- Home -->
+			<div class="wrapper style2 first" style="padding: 7em 0 8em 0;">
+				<article class="container" id="top" style="width: 1020px">
+					<div class="row">
+						<img alt="" height="300" src="images/icon.jpg" width="450">
+						<div class="8u" style="width:500px">
+							<header>
+								<h1>Image Converter</h1>
+							</header>
+							<p>Just log in and start enjoying<form method="post">
+								<input autocomplete="on" name="Text1" style="left: 0px; top: 0px; width: 70%; height: 39px" type="text" placeholder="username">
+								<input name="Text2" placeholder="password" style="margin-top:10px;margin-bottom:20px;left: 0px; top: 0px; width: 70%; height: 39px;" type="password"></form>
+							<a href="#work" class="button big scrolly" style="left: 0px; top: 26px">
+							Log in</a>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Work -->
+			<div class="wrapper style1 first">
+				<article id="work">
+					<header>
+						<h2>All that ImagePro can do for you</h2>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u" >
+								<section class="box style1">
+									<span class="icon featured fa-cloud"></span>
+									<h3>Image conversion in 
+									the cloud</h3>
+									<p><span>There is no 
+									need to install any software on your 
+									computer! Select your files from Dropbox and 
+									we will do the job for you.</span></p>
+								</section>
+							</div>
+							<div class="4u" >
+								<section class="box style1">
+									<span class="icon featured fa-files-o"></span>
+									<h3>Multiple supported formats</h3>
+									<p style="height: 64px">You will be able to 
+									upload many formats such as jpg, gif, png. </p>
+								</section>
+							</div>
+							<div class="4u" style="width: 350px">
+								<section class="box style1">
+									<span class="icon featured fa-fighter-jet"></span>
+									<h3>Fast Conversion</h3>
+									<p>Process of the image with optimal results in short time</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Portfolio -->
+
+		<!-- Contact -->
+			<div class="wrapper style4" style="height: 5px">
+			</div>
