@@ -51,8 +51,44 @@
 					<div>
 						<div class="article" style="float: right; display: block">
 							<h2>Image conversion in the cloud</h2>
-							<img src="images/cloud.png" width="100" height="110" alt="" />
-							<a href="#" class=" dropbox-dropin-btn dropbox-dropin-default"><span class="dropin-btn-status"></span>Choose from Dropbox</a>
+							<img src="images/cloud.png" width="100" height="110" alt=""/>
+							<div id="container"></div>
+							<a id="link"></a>
+							<script>
+						            options = {
+						                // Required. Called when a user selects an item in the Chooser.
+						                success: function(files) {
+						                    var linkTag = document.getElementById('link');
+						                    linkTag.href = files[0].link;
+						                    linkTag.textContent = files[0].link;
+						                    alert("Here's the file link: " + files[0].link)
+						                },
+						
+						                // Optional. Called when the user closes the dialog without selecting a file
+						                // and does not include any parameters.
+						                cancel: function() {
+						
+						                },
+						
+						                // Optional. "preview" (default) is a preview link to the document for sharing,
+						                // "direct" is an expiring link to download the contents of the file. For more
+						                // information about link types, see Link types below.
+						                linkType: "preview", // or "direct"
+						
+						                // Optional. A value of false (default) limits selection to a single file, while
+						                // true enables multiple file selection.
+						                multiselect: false, // or true
+						
+						                // Optional. This is a list of file extensions. If specified, the user will
+						                // only be able to select files with these extensions. You may also specify
+						                // file types, such as "video" or "images" in the list. For more information,
+						                // see File types below. By default, all extensions are allowed.
+						                extensions: ['.pdf', '.doc', '.docx'],
+						            };    
+						            
+						            var button = Dropbox.createChooseButton(options);
+						        document.getElementById('container').appendChild(button);
+						    </script>
 							<p>There is no need to install any software on your computer!
 								Select your files from Dropbox and we will do the job for you.</p>
 							<div class="clr"></div>
@@ -141,5 +177,13 @@
 		</div>
 	</div>
 </body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-43091346-1', 'devzone.co.in');
+  ga('send', 'pageview');
+</script>
 </html>
 
