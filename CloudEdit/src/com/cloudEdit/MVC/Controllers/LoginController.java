@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.cloudEdit.Service.Authentication.FacebookOAuthService;
 
@@ -36,14 +38,12 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/login_callback", method = RequestMethod.GET)
-	public String LoignCallback(HttpServletRequest request) throws ServletException
+	public ModelAndView LoignCallback(HttpServletRequest request) throws ServletException
 	{
         String oauthCode = request.getParameter("code");
 		FacebookOAuthService.GetInstance().GetOAuthAccessToken(oauthCode);
-        
-		// redirect
-        String contextPath = request.getContextPath() + "index";
-        return contextPath;
+        request.setAttribute("page", "mainview.jsp");
+		return new ModelAndView("layout");
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -55,7 +55,7 @@ public class LoginController {
         // Log Out of the Facebook
         StringBuffer next = request.getRequestURL();
         int index = next.lastIndexOf("/");
-        next.replace(index+1, next.length(), "index.jsp");
+        next.replace(index+1, next.length(), "index.html");
         
         return "redirect:" + "http://www.facebook.com/logout.php?next=" + next.toString() + "&access_token=" + accessToken;
 	}

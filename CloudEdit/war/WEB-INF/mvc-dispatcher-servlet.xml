@@ -20,6 +20,13 @@
  
 	<mvc:annotation-driven />
  
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="location">
+			<value>/WEB-INF/views.xml</value>
+		</property>
+	</bean>
+ 
+ 	<!-- InternalResourceViewResolver with lowest priority -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/</value>
