@@ -760,3 +760,122 @@
 		{
 			color: #777;
 		}
+		
+/*********************************************************************************/
+/* Sign up                                                                       */
+/*********************************************************************************/
+/*******************/
+.main > div {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+.two{
+    .register {
+       border: none; 
+        
+        h3 {
+          border-bottom-color: #909090;
+        }
+    
+        .sep{
+          border-color: #909090;
+        }
+    }
+}
+.register {
+  	width: 500px;
+  	margin: 10px auto;
+  	padding: 10px;
+  	border: 3px solid;
+  	border-radius: 10px;
+   	box-shadow: 0 0 20px 0 #000000;
+  	
+  h3 {
+	  	margin: 0 15px 20px;
+	  	border-bottom: 2px solid;
+	  	padding: 5px 10px 5px 0;
+	  	font-size: 1.1em;
+	}
+
+	div{
+		margin: 0 0 15px 0;
+	  	border : none;
+	}
+
+	label {
+	  	display: inline-block;
+	  	width: 25%;
+	  	text-align: right;
+	  	margin: 10px
+	}
+
+	
+}
+
+	input {
+		left: 0px; 
+		top: 0px; 
+		width: 41%; 
+		height: 39px
+	}
+	
+	.sep {
+	  	border: 1px solid #909090;
+	  	position: relative;
+	  	margin: 35px 20px;
+	}
+
+	.or {
+	  	position: absolute;
+	  	width: 50px;
+	 	left: 50%;
+	  	text-align: center;
+	  	margin: -10px 0 0 -25px;
+	  	line-height: 20px;
+	  	background: white;
+	}
+	.facebook {
+	  	@include linear-gradient(#415EA3, #2E4A88);
+	  	
+	  	&:hover {
+			@include linear-gradient(#3B5591, #2A437C);
+		}
+
+			}
+
+	.twitter {
+	  	@include linear-gradient(#41C0F3, #3FBAEC);
+	  	
+		&:hover {
+	  		@include linear-gradient(#3EB1DF, #3EAAD6);
+	  	}
+
+			}
+	.connect {
+	  	width: 400px;
+	  	margin: 0 auto;
+	  	text-align: center;
+	}
+
+	.social-buttons {
+	  	display: inline-block;
+	  	min-width: 150px;
+	  	height: 50px;
+	  	margin: 0 5px 10px;
+	  	border-radius: 10px;
+	  	text-shadow: 1px 1px 5px #000000;
+
+	  	a {
+	  		display: block;
+	  		height: 100%;
+	  		text-decoration: none;
+	  		color: #FFFFFF;
+	  		padding: 10px 15px;
+		}
+
+		span {
+	  		font-size: 30px;
+	  		margin-left: 35px;
+		}
+		}
