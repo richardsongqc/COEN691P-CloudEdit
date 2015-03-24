@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Image Converter</title>
+		<title>Image Pro</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -41,10 +41,10 @@
 					</tag:notloggedin>
 					<tag:loggedin>
 						<li style="display:block">
-						<a href="/logout" style="float:right;width: 100px;display:block">
+						<a id="link_logout" href="/logout" style="float:right;display:block">
 						Log out</a></li>
 						<li style="display:block">
-						<a href="#top" style="float:right;display:block ">
+						<a href="#top" style="float:right;display:block">
 						${facebook.name}</a></li>
 					</tag:loggedin>
 				</ul>

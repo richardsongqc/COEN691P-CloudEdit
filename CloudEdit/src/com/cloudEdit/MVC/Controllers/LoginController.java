@@ -42,7 +42,7 @@ public class LoginController {
 	{
         String oauthCode = request.getParameter("code");
 		FacebookOAuthService.GetInstance().GetOAuthAccessToken(oauthCode);
-        request.setAttribute("page", "mainview.jsp");
+        request.setAttribute("page", "workspace.jsp");
 		return new ModelAndView("layout");
 	}
 	

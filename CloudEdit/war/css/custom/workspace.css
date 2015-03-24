@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+.wrap {
+    width: 100%;
+    border: 1px brown solid;
+    margin-top: 65px;
+}
+
+.layout {
+    width: 20%;
+    padding: 0px;
+    display: inline-block;
+    background-color: #ccc;
+  	float:left;
+}
+
+.content{
+  padding-left: 5px;
+  height: 120px;
+  overflow: auto;
+}
+.resizable2 .content {
+  padding-left: 15px;
+}
+.resizable2 {
+	width: 80%;
+    background-image: url("https://pimpilla.files.wordpress.com/2013/06/damask_wallpaper_seamless_background_light_gray.jpg");
+}
+/* .ui-resizable-e {  */
+/*     cursor: ew-resize;  */
+/*     width: 10px;  */
+/*     right: -10px;  */
+/*     top: 0;  */
+/*     bottom: 0;  */
+/*     background-color: gray; */
+/* } */
+
+#apply-button {
+	margin: 10px;
+	float: right;
+}
+
+#btn-rotate-apply {
+	margin: 10px;
+	float: right;
+}
+
+#btn-autoAdjust {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+#slider-rotate {
+	width: 80%;
+	margin-left: 20px;
+}
+
+  #toolbar {
+    padding: 4px;
+    display: inline-block;
+    margin-left: auto;
+	margin-right: auto;
+	position: fixed;
+	width: 100%;
+  }
+  /* support: IE7 */
+  *+html #toolbar {
+    display: inline;
+  }
+  
+  .ui-menu 
+  {
+    position: absolute;
+    width: 200px;
+    }
+
+#canvas {
+	width: 90%;
+	height: ;
+	padding: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%); 
+	background-color: #ccc;
+
+	
+}
+	#canvas img {
+	width: 100%;
+	height: 100%;
+	}
+
+
+
+#feedback { font-size: 0.9em; }
+  #list_basic .ui-selecting { background: #EFEFEF; }
+  #list_basic .ui-selected { background: #EFEFEF; color: gray; }
+  #list_basic { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+  #list_basic li { margin: 3px; padding: 0.4em; font-size: 0.8em; height: 100px; }
