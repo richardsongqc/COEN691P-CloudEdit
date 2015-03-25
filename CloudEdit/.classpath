@@ -24,5 +24,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/httpcore-4.2.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/httpmime-4.2.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/org.apache.commons.io-2.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gson-2.3.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

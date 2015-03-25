@@ -69,7 +69,7 @@
 			  </div>
 			  <ul>
 			    <li id="saveDropbox">to Dropbox</li>
-			    <li>to my computer</li>
+			    <li id="saveLocal">to my computer</li>
 			  </ul>
 			</div>
 		

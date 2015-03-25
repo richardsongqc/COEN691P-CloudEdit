@@ -79,26 +79,34 @@
     	    extensions: ['.bmp', '.png', '.jpg'],
     	};
     
+    $("#openUrl").click( function() {
+    	var url = prompt("Please enter an url");
+    	upload_image(url);
+    });
+    
     $("#openDropbox").click( function() {
     	Dropbox.choose(choose_options);
     });
-    
+      
     function upload_image(file) {
     	var src = file.link;
-//    	$.get('upload', {"src": src},
-//                function(resp) { // on sucess
-//
-//                })
-//                .fail(function() { // on failure
-//                    alert("Request failed.");
-//                });
-  	  var img = new Image();
-  	  var src = file.link;
-  	  img.src = src;
-  	  var canvas = document.getElementById("canvas");
-  	  var image = canvas.getElementsByTagName("img")[0];
-  	  image.src = src;
-  }
+    	$.get('upload', {"src": src},
+                function(resp) { // on sucess
+    				display_image(resp);
+                })
+                .fail(function() { // on failure
+                    alert("Request failed.");
+                });
+    }
+    
+    function display_image(json) {
+		var jsonObj = $.parseJSON(json);
+		var src = jsonObj['url'];
+  	  	
+		var canvas = document.getElementById("canvas");
+  	  	var image = canvas.getElementsByTagName("img")[0];
+  	  	image.src = src;
+    }
     
     $( "#btnSave" )
     .button()
@@ -165,6 +173,15 @@
     	Dropbox.save(src, filename, save_options);
     });
     
+    $("#saveLocal").click( function() {
+    	var link = document.createElement('a');
+    	var href = $("#canvas_img").attr("src");
+    	var download = href.substring( href.lastIndexOf('/')+1, href.length);
+    	link.setAttribute("href", href);
+    	link.setAttribute("download", download);
+    	link.click();
+    });
+    
 	/* ----------------- accordion --------------------- */
     $( "#accordion" ).accordion({
     	  heightStyle: "fill",
@@ -173,6 +190,7 @@
 	/* ----------------- section: Basic --------------------- */
     $( "#list_basic" ).selectable();
     
+	/* ----------------- Operation: Auto Adjust --------------------- */
     $("#btn-autoAdjust").click( function(event) {
     	// Get the button id, as we will pass it to the servlet
     	// using a GET request and it will be used to get different
@@ -200,18 +218,13 @@
     			
     });
     
+	/* ----------------- Operation: rotate --------------------- */
     $("#btn-rotate-apply").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
     	var angle = $("#slider-rotate").slider( "value" );
-    	alert(angle);
     	$.get('rotate', { "src": img_src, "angle": angle},
                 function(resp) { // on sucess
-        			// We need 2 methods here due to the different ways of 
-        			// handling a JSON object.
-        			if (buttonID === "bands")
-        				printBands(resp);
-        			else if (buttonID === "bands-albums")
-        				printBandsAndAlbums(resp); 
+    				display_image(resp);
                 })
                 .fail(function() { // on failure
                     alert("Request failed.");

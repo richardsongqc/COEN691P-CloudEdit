@@ -9,6 +9,7 @@ import java.util.Properties;
 import com.cloudEdit.MVC.Models.*;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.Transformation;
+import com.google.gson.*;
 
 public class ImageProcService {
 	
@@ -54,8 +55,11 @@ public class ImageProcService {
 		return instance;
 	}
 	
-	public String upload(String url) {
-		String publicId;
+	public Map<String, Object> upload(String url) {
+		
+		if(url.isEmpty())
+			throw new IllegalArgumentException("Null url");
+		
 		Map<String, Object> result = new Hashtable<String, Object>();
 		try {
 			Map<String, Object> option = new Hashtable<String, Object>();
@@ -65,19 +69,12 @@ public class ImageProcService {
 			e.printStackTrace();
 		}
 		
-		publicId = result.get("public_id").toString();
-		String imgTag = cloudinary.url().imageTag(publicId);
-		if(imgTag != null){
-			
-		}
-		
-		return publicId;
+		return result;
 	}
 	
 	public String rotate(String id, ImageRotateParameter param) {
 		String resultUrl = cloudinary.url().transformation(
-				new Transformation().angle(param.get_angle()))
-									.imageTag(id);
+				new Transformation().angle(param.get_angle())).generate(id);
 		return resultUrl;
 	}
 	
