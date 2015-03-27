@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Image Converter</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script language="JavaScript" src="js/slider.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" />
+		<link href="css/skel.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link href="css/style-desktop.css" rel="stylesheet" type="text/css">
+		<![endif]-->
+		</head>
+	<body>
+
+		<!-- Nav -->
+			<nav id="nav" style="width: 100%">
+				<ul>
+					<li style="display:block">
+					<a href="#top" style="float:right;width: 100px;display:block">
+					Sign up</a></li>
+					<li style="display:block">
+					<a href="index.html" style="float:right;width: 100px;;display:block ">
+					Log in</a></li>
+				
+					
+				</ul>
+			</nav>
+		
+		<div class="wrapper style1 first" style="padding: 7em 0 2em 0;">
+				<article id="work">
+					<header>
+						<h2>Follow the next steps</h2>
+					</header>
+				</article>
+			</div>
+		
+		<!-- Work -->
+			<div class="wrapper style2"">
+				<article id="work">
+					<div class="container">
+						<div class="row">
+							<div class="4u" >
+								<section class="box style1">
+									<i class="icon conversion fa-file-image-o"></i>
+									<h3>1. Select files</h3>
+									<form method="post">
+										<select name="Select file" style="-webkit-appearance: menulist;left: 0px; top: 0px; width:300px">
+										<option>Add from URL</option>
+										<option>Choose from dropbox</option>
+										<option>Choose from PC</option>
+										</select>
+									</form>
+								</section>
+							</div>
+
+							<div class="4u" >
+								<section class="box style1">
+									<span class="icon conversion fa-cog fa-spin"></span>
+									<h3>2. Set the features</h3>
+										<form action="multiple_sliders_demo.html" method="get" name="demoForm">
+										<div style="text-align:left">
+										<b >Blur</b>
+										<input class="sliderText" name="sliderValue" id="sliderValue1" type="Text" size="3" >
+										<script language="JavaScript">
+											var A_TPL = {
+												'b_vertical' : false,
+												'b_watch': true,
+												'n_controlWidth': 300,
+												'n_controlHeight': 16,
+												'n_sliderWidth': 16,
+												'n_sliderHeight': 15,
+												'n_pathLeft' : 1,
+												'n_pathTop' : 1,
+												'n_pathLength' : 290,
+												's_imgControl': 'img/blueh_bg.gif',
+												's_imgSlider': 'img/blueh_sl.gif',
+												'n_zIndex': 1
+											}
+
+											var A_INIT1 = {
+												's_name': 'sliderValue1',
+												'n_minValue' : 0,
+												'n_maxValue' : 100,
+												'n_value' : 20,
+												'n_step' : 1
+											}
+											new slider(A_INIT1, A_TPL);
+										</script>
+										<div>
+										<div style="text-align:left;padding-top:10px">
+										<b >Brightness</b>
+										<input class="sliderText"  name="sliderValue" id="sliderValue2" type="Text" size="3">
+										<script language="JavaScript">
+											var A_INIT2 = {
+												's_name': 'sliderValue2',
+												'n_minValue' : 0,
+												'n_maxValue' : 100,
+												'n_value' : 5,
+												'n_step' : 1
+											}
+											new slider(A_INIT2, A_TPL);
+										</script>
+										<div style="text-align:left;padding-top:10px">
+										<b >Contrast</b>
+										<input class="sliderText"  name="sliderValue" id="sliderValue3" type="Text" size="3">
+										<script language="JavaScript">
+											var A_INIT3 = {
+												's_name': 'sliderValue3',
+												'n_minValue' : 0,
+												'n_maxValue' : 100,
+												'n_value' : 10,
+												'n_step' : 1
+											}
+
+											new slider(A_INIT3, A_TPL);
+										</script>
+										</div>
+										<div style="text-align:left;padding-top:10px">
+										<b >Saturation</b>
+										<input class="sliderText"  name="sliderValue" id="sliderValue4" type="Text" size="3">
+										<script language="JavaScript">
+											var A_INIT4 = {
+												's_name': 'sliderValue4',
+												'n_minValue' : 0,
+												'n_maxValue' : 100,
+												'n_value' : -20,
+												'n_step' : 1
+											}
+
+											new slider(A_INIT4, A_TPL);
+										</script>
+										</br>
+										</div>
+										<div style="text-align:center;top: 26px">
+											<a class="button big scrolly" >
+												Set values</a>
+										</div>
+
+										</form>
+								</section>
+							</div>
+							
+							<div class="4u">
+								<section class="box style1">
+									<span class="icon conversion fa-floppy-o"></span>
+									<h3>Save</h3>
+									
+								</section>
+							</div>
+							
+						</div>
+					</div>
+				</article>
+			</div>
+			
+		
+
+
+		<!-- Portfolio -->
+
+		<!-- Contact -->
+			<div class="wrapper style4" style="height: 5px">
+			</div>
+
+	</body>
+</html>
