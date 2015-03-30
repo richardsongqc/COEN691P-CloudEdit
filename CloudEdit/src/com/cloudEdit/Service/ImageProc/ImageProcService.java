@@ -83,29 +83,104 @@ public class ImageProcService {
 				new Transformation().width(param.getWidth())
 									.height(param.getHeight())
 									.crop(param.getName()))
-									.imageTag(id);
+									.generate(id);
 		return resultUrl;
 	}
 	
-	public String applyContrast(String id, ImageContrastParameter param) {
+	public String improve(String id) {
 		String resultUrl = cloudinary.url().transformation(
-				new Transformation().effect(param.getName(), param.getRatio()))
-									.imageTag(id);
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_IMPROVE)).generate(id);
 		return resultUrl;
 	}
 	
-	public String applyBrightness(String id, ImageBrightnessParameter param) {
+	public String exposure(String id, ImageBrightnessParameter param, ImageContrastParameter param1) {
 		String resultUrl = cloudinary.url().transformation(
-				new Transformation().effect(param.getName(), param.getLevel()))
-									.imageTag(id);
+				new Transformation().effect(param.getName(), param.getLevel())
+				.chain().effect(param1.getName(), param1.getRatio()))
+									.generate(id);
 		return resultUrl;
 	}
 	
-	public String applySaturation(String id, ImageSaturationParameter param) {
+	public String HSV(String id, ImageHSVParameter param) {
 		String resultUrl = cloudinary.url().transformation(
-				new Transformation().effect(param.getName(), param.getLevel()))
-									.imageTag(id);
+				new Transformation().effect(param.getHueName(), param.getHue()).
+				chain().effect(param.getSaturationName(), param.getSaturation()))
+				.generate(id);
 		return resultUrl;
 	}
 	
+	public String RGB(String id, ImageRGBParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(param.getRedName(), param.getR()).
+				chain().effect(param.getGreenName(), param.getG()).
+				chain().effect(param.getBlueName(), param.getB())).generate(id);
+		return resultUrl;
+	}
+	
+	public String grayscale(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_GRAYSCALE)).generate(id);
+		return resultUrl;
+	}
+	
+	public String oilPaint(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_OILPAINT)).generate(id);
+		return resultUrl;
+	}
+	
+	public String negate(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_NEGATE)).generate(id);
+		return resultUrl;
+	}
+	
+	public String vignette(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_VIGNETTE)).generate(id);
+		return resultUrl;
+	}
+	
+	public String sepia(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_SEPIA)).generate(id);
+		return resultUrl;
+	}
+	
+	public String gradientFade(String id) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(ImageDefs.IMG_PARAM_NAME_GRADIENTFADE)).generate(id);
+		return resultUrl;
+	}
+	
+	public String pixelate(String id, ImagePixelateParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(param.getName(), param.getPixelation())).generate(id);
+		return resultUrl;
+	}
+	
+	public String blur(String id, ImageBlurParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(param.getName(), param.getLevel())).generate(id);
+		return resultUrl;
+	}
+	
+	public String sharpen(String id, ImageSharpenParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().effect(param.getName(), param.getLevel())).generate(id);
+		return resultUrl;
+	}
+	
+	public String border(String id, ImageBorderParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().border(param.getPixel(), "#"+param.getHexColor())).generate(id);
+		return resultUrl;
+	}
+	
+	public String textOverlay(String id, ImageTextOverlayParameter param) {
+		String resultUrl = cloudinary.url().transformation(
+				new Transformation().overlay(param.getName()).x(8).y(8).gravity(param.getGravity().toString()))
+				.generate(id);
+		return resultUrl;
+	}
 }
