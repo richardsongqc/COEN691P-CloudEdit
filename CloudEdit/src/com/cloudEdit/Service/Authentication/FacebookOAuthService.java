@@ -11,9 +11,7 @@ public class FacebookOAuthService {
 	
 	protected FacebookOAuthService()
 	{
-		if(_facebook == null){
-			_facebook = new FacebookFactory().getInstance();
-		}
+
 	}
 	
 	public static FacebookOAuthService GetInstance() 
@@ -24,25 +22,28 @@ public class FacebookOAuthService {
 		return _instance;
 	}
 	
-	public Facebook GetFacebookInstance()
+	public Facebook GetFacebook()
 	{
+		if(_facebook == null){
+			_facebook = new FacebookFactory().getInstance();
+		}
 		return _facebook;
 	}
 	
 	public String GetOAuthAuthorizationURL(String callbackURL)
 	{
-		return _facebook.getOAuthAuthorizationURL(callbackURL);
+		return GetFacebook().getOAuthAuthorizationURL(callbackURL);
 	}
 	
 	public String GetOAuthAccessToken()
 	{
-		return _facebook.getOAuthAccessToken().getToken();
+		return GetFacebook().getOAuthAccessToken().getToken();
 	}
 	
 	public String GetOAuthAccessToken(String oauthCode)
 	{
 		try {
-			return _facebook.getOAuthAccessToken(oauthCode).getToken();
+			return GetFacebook().getOAuthAccessToken(oauthCode).getToken();
 		} catch (FacebookException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

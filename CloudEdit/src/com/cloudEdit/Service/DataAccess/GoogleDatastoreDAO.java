@@ -4,7 +4,7 @@ import com.cloudEdit.MVC.Models.DbAccount;
 
 public interface GoogleDatastoreDAO {
 	public boolean createAccount(DbAccount account);
-	public DbAccount findAccount(String id);
+	public DbAccount getAccountByEmail(String email);
 	public boolean updateAccount(DbAccount account);
 	public boolean deleteAccount(String id);
 }

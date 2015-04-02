@@ -1,6 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 
+    
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -50,24 +51,22 @@
 <!-- 						<img alt="" height="300" src="images/icon.jpg" width="450"> -->
 						<div class="8u" style="width:500px">
 							<header>
-								<h1>Sign up</h1>
+								<h1>Sign in</h1>
 							</header>
-							<p>Just sign up & start enjoying
-							<form action="signup" method="POST">
-								<input autocomplete="on" name="username" style="left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="username">
-								<input autocomplete="on" name="email" style="margin-top: 10px;left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="email">
+							<p>Enter email and password
+							<form action="login" method="get">
+								<input autocomplete="on" name="email" style="left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="email">
 								<input name="password" placeholder="password" style="margin-top:10px;margin-bottom:20px;left: 5px; top: 0px; width: 70%; height: 39px;" type="password">
 								<button type="submit" class="button button-block" style="vertical-align: top;left: 5px; top: 26px">
-								Sign up</button>
+								Sign in</button>
 							</form>
-<!-- 								<div class="or-spacer"> -->
-<!-- 								<div class="mask"></div> -->
-<!-- 								  <span><i>or</i></span> -->
-<!-- 								</div> -->
-<!-- 								<a href="#" style="display: inline-block; position: absolute;"> -->
-<!-- 	                				<img alt="" src="images/fbsignup.png" height="50px" width="250px"> -->
-<!-- 	              				</a> -->
-              				
+							<div class="or-spacer">
+							<div class="mask"></div>
+							  <span><i>or</i></span>
+							</div>
+							<a href="/login_fb" style="display: inline-block; position: absolute;">
+                				<img alt="" src="images/fblogin.png" height="90px" width="250px">
+              				</a>		
 					  </div>
 					</div>
 				</article>

@@ -1,10 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+      
 <!DOCTYPE html>
-<html>
 <head>
 <meta charset="UTF-8">
-<title>Image Pro</title>
+<title>Cloud Edit</title>
 	<head>
-		<title>Image Pro</title>
+		<title>Cloud Edit</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,41 +34,22 @@
 		<!-- Nav -->
 			<nav id="nav" style="width: 100%">
 				<ul>
-					<h2 id="nav-header">Image Pro</h2>
+					<h2 id="nav-header"><a href="/">Cloud Edit</a></h2>
 						<li style="display:block">
-						<a href="/Signup" style="float:right;width: 100px;display:block">
+						<a href="/signup.jsp" style="float:right;width: 100px;display:block">
 						Sign up</a></li>
 						<li style="display:block">
-						<a href="/login" style="float:right;width: 100px;;display:block ">
-						Log in</a></li>
+						<a href="/signin.jsp" style="float:right;width: 100px;;display:block ">
+						Sign in</a></li>
 				</ul>
 			</nav>
 
-		
-		<!-- Home -->
-			<div class="wrapper style1 first" style="padding: 7em 0 8em 0;">
-				<article class="container" id="top" style="width: 1020px">
-					<div class="row">
-						<img alt="" height="300" src="images/icon.jpg" width="450">
-						<div class="8u" style="width:500px">
-							<header>
-								<h1>Image Pro</h1>
-							</header>
-							<p>Just log in and start enjoying<form method="post">
-								<input autocomplete="on" name="Text1" style="left: 0px; top: 0px; width: 70%; height: 39px" type="text" placeholder="username">
-								<input name="Text2" placeholder="password" style="margin-top:10px;margin-bottom:20px;left: 0px; top: 0px; width: 70%; height: 39px;" type="password"></form>
-							<a href="#work" class="button big scrolly" style="left: 0px; top: 26px">
-							Log in</a>
-						</div>
-					</div>
-				</article>
-			</div>
-
+	
 		<!-- Work -->
-			<div class="wrapper style2">
+			<div class="wrapper style3">
 				<article id="work">
 					<header>
-						<h2>All that ImagePro can do for you</h2>
+						<h2>All that Cloud Edit can do for you</h2>
 					</header>
 					<div class="container">
 						<div class="row">

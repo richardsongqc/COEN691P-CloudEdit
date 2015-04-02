@@ -7,10 +7,18 @@
 
     <bean id="home"
         class="org.springframework.web.servlet.view.JstlView">
-        <property name="url" value="index.html" />
+        <property name="url" value="index.jsp" />
     </bean>
     <bean id="layout"
         class="org.springframework.web.servlet.view.JstlView">
         <property name="url" value="_layout.jsp" />
+    </bean>
+    <bean id="signup"
+        class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="signup.jsp" />
+    </bean>
+    <bean id="signin"
+        class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="signin.jsp" />
     </bean>
 </beans>

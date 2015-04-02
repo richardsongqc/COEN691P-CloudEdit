@@ -1,12 +1,20 @@
 package com.cloudEdit.Service.DataAccess;
 
+import org.springframework.util.CollectionUtils;
+
 import com.cloudEdit.MVC.Models.DbAccount;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.EntityNotFoundException;
+import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.Filter;
+import com.google.appengine.api.datastore.Query.FilterOperator;
+import com.google.appengine.api.datastore.Query.FilterPredicate;
 
 public class GoogleDatastoreDAOImpl implements GoogleDatastoreDAO {
 
@@ -20,7 +28,7 @@ public class GoogleDatastoreDAOImpl implements GoogleDatastoreDAO {
 	protected GoogleDatastoreDAOImpl() {
 	}
 	
-	public GoogleDatastoreDAOImpl getInstance() {
+	public static GoogleDatastoreDAOImpl getInstance() {
 		if(instance == null) {
 			instance = new GoogleDatastoreDAOImpl();
 		}
@@ -39,12 +47,12 @@ public class GoogleDatastoreDAOImpl implements GoogleDatastoreDAO {
 	}
 
 	@Override
-	public DbAccount findAccount(String id) {
+	public DbAccount getAccountByEmail(String email) {
 		DbAccount account = new DbAccount();
 		DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
 		Entity entity = null;
 		
-		Key key = KeyFactory.stringToKey(id);
+		Key key = KeyFactory.createKey(ENTITY_NAME_ACCOUNT, email);
 		try {
 			entity = ds.get(key);
 		} catch (EntityNotFoundException e) {
@@ -53,7 +61,15 @@ public class GoogleDatastoreDAOImpl implements GoogleDatastoreDAO {
 			return null;
 		}
 		
-		account.setEmail(entity.getProperty(PROPERTY_NAME_EMAIL).toString());
+//		Filter filter = new FilterPredicate(Entity.KEY_RESERVED_PROPERTY,
+//				FilterOperator.EQUAL, email);
+//		Query query =  new Query(ENTITY_NAME_ACCOUNT).setFilter(filter);
+//		PreparedQuery pq = ds.prepare(query);
+//		
+//		if(pq.countEntities() == 0)
+//			return null;
+		
+		account.setEmail(entity.getKey().toString());
 		account.setUserName(entity.getProperty(PROPERTY_NAME_USRNAME).toString());
 		account.setPassword(entity.getProperty(PROPERTY_NAME_PWD).toString());
 		
@@ -87,4 +103,5 @@ public class GoogleDatastoreDAOImpl implements GoogleDatastoreDAO {
 		ds.delete(key);
 		return true;
 	}
+
 }

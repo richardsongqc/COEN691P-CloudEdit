@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Image Pro</title>
+		<title>Cloud Edit</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -30,7 +30,7 @@
 		<!-- Nav -->
 			<nav id="nav" style="width: 100%">
 				<ul>
-					<h2 id="nav-header">Image Pro</h2>
+					<h2 id="nav-header" style="margin-top:20px; margin-left:20px;">Cloud Edit</h2>
 					<tag:notloggedin>
 						<li style="display:block">
 						<a href="/Signup" style="float:right;width: 100px;display:block">
@@ -45,7 +45,7 @@
 						Log out</a></li>
 						<li style="display:block">
 						<a href="#top" style="float:right;display:block">
-						${facebook.name}</a></li>
+						${username}</a></li>
 					</tag:loggedin>
 				</ul>
 			</nav>
