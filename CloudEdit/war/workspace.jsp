@@ -3,7 +3,8 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/custom/workspace.js"></script>
 <script src="js/colpick.js"></script>
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="0aci2snop4eu2qc"></script>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js"
+ id="dropboxjs" data-app-key="rnu2jv1ajih16a1"></script>
 
 <link rel="stylesheet" href="css/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="css/custom/workspace.css">

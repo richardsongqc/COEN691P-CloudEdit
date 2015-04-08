@@ -52,5 +52,10 @@
 
 		<!-- Container  -->
 		<jsp:include page="${page}" flush="true"/>
+		
+		<!-- footer -->
+		<div class="wrapper style4">
+			<p style="margin-top:2em">© 2015 Concordia University - COEN691P - Team7 </p>
+		</div>
 	</body>
 </html>

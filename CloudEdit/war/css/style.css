@@ -527,7 +527,33 @@
 			box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.15), 0px 2px 3px 0px rgba(0,0,0,0.1);
 			text-align: center;
 		}
-
+	
+	/* doc */	
+		.doc
+		{
+			background: #fff;
+			box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.15), 0px 2px 3px 0px rgba(0,0,0,0.1);
+			text-align: left;
+			padding: 10px;
+		}
+		
+		.doc b {
+			background: #cccccc;
+			border-radius: 4px;
+		}
+		
+		.doc u{
+		    margin-left: 20px;
+		    margin-right: 20px;
+		    color: #669900;
+		    font-weight: bold;
+		}
+		
+		.doc h5{
+		    margin-left: 20px;
+		    margin-right: 20px;
+		    color: #93c3cd;
+		}
 /*********************************************************************************/
 /* Icons                                                                         */
 /*********************************************************************************/
@@ -985,3 +1011,13 @@
 	  		margin-left: 35px;
 		}
 		}
+		
+.footer {
+	display: table;
+	with:100%;
+	table-layout: fixed;
+}
+
+.footer .div {
+	display: table-cell;
+} 

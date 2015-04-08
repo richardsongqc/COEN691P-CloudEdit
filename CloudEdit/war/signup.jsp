@@ -13,10 +13,14 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/custom/signup.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/custom/form.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" />
@@ -53,12 +57,15 @@
 								<h1>Sign up</h1>
 							</header>
 							<p>Just sign up & start enjoying
-							<form action="signup" method="POST">
+							<form id="register-form" action="signup" method="POST">
+							<fieldset>
 								<input autocomplete="on" name="username" style="left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="username">
 								<input autocomplete="on" name="email" style="margin-top: 10px;left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="email">
-								<input name="password" placeholder="password" style="margin-top:10px;margin-bottom:20px;left: 5px; top: 0px; width: 70%; height: 39px;" type="password">
+								<input name="password" placeholder="password" style="margin-top:10px;left: 5px; top: 0px; width: 70%; height: 39px;" type="password">
+								<input name="password_confirm" placeholder="confirm password" style="margin-top:10px;margin-bottom:20px;left: 5px; top: 0px; width: 70%; height: 39px;" type="password">
 								<button type="submit" class="button button-block" style="vertical-align: top;left: 5px; top: 26px">
 								Sign up</button>
+							</fieldset>
 							</form>
 <!-- 								<div class="or-spacer"> -->
 <!-- 								<div class="mask"></div> -->
@@ -73,9 +80,8 @@
 				</article>
 			</div>
       
-		<!-- Contact -->
-			<div class="wrapper style4" style="height: 5px">
-			</div>
+		<!-- footer -->
+		<jsp:include page="_footer.jsp" flush="true"/>
 
 	</body>
 </html>

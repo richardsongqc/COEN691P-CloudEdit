@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.validator.UrlValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,12 +21,12 @@ import com.google.gson.*;
 @Controller
 public class WorkspaceController {
 
-	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/upload", method = RequestMethod.GET)
 	public @ResponseBody String upload(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		// upload
-		String src = request.getParameter("src");
+		String src = request.getParameter("src");		
 		Map<String, Object> resp = ImageProcService.getInstance().upload(src);
 		
 		// save the public id
@@ -33,7 +34,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/improve", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/improve", method = RequestMethod.GET)
 	public @ResponseBody String autoAdjust(HttpServletRequest request, HttpServletResponse response) {
 		
 		// operation
@@ -51,7 +52,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/rotate", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/rotate", method = RequestMethod.GET)
 	public @ResponseBody String rotate(HttpServletRequest request, HttpServletResponse response) {
 		
 		// prepare the parameter
@@ -71,7 +72,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/resize", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/resize", method = RequestMethod.GET)
 	public @ResponseBody String resize(HttpServletRequest request, HttpServletResponse response) {
 		// prepare the parameter
 		int width = Integer.parseInt(request.getParameter("width"));
@@ -93,7 +94,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);		
 	}
 	
-	@RequestMapping(value = "/exposure", method = RequestMethod.GET)
+	@RequestMapping(value = "images/exposure", method = RequestMethod.GET)
 	public @ResponseBody String exposure(HttpServletRequest request, HttpServletResponse response) {
 		// prepare the parameter
 		int brightness = Integer.parseInt(request.getParameter("brightness"));
@@ -117,7 +118,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/color", method = RequestMethod.GET)
+	@RequestMapping(value = "images/color", method = RequestMethod.GET)
 	public @ResponseBody String color(HttpServletRequest request, HttpServletResponse response) {
 		// prepare the parameter
 		int r = Integer.parseInt(request.getParameter("r"));
@@ -141,7 +142,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/hsv", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/hsv", method = RequestMethod.GET)
 	public @ResponseBody String hsv(HttpServletRequest request, HttpServletResponse response) {
 		// prepare the parameter
 		int saturation = Integer.parseInt(request.getParameter("saturation"));
@@ -163,7 +164,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/effects", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/effects", method = RequestMethod.GET)
 	public @ResponseBody String applyEffect(HttpServletRequest request, HttpServletResponse response) {
 		
 		// operation
@@ -220,7 +221,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/border", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/border", method = RequestMethod.GET)
 	public @ResponseBody String border(HttpServletRequest request, HttpServletResponse response) {
 		
 		// prepare the parameter
@@ -243,7 +244,7 @@ public class WorkspaceController {
 		return new Gson().toJson(resp);
 	}
 	
-	@RequestMapping(value = "/textoverlay", method = RequestMethod.GET)
+	@RequestMapping(value = "/images/textoverlay", method = RequestMethod.GET)
 	public @ResponseBody String textOverlay(HttpServletRequest request, HttpServletResponse response) {
 		// prepare the parameter
 		String text = request.getParameter("text");

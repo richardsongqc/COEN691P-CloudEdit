@@ -9,9 +9,7 @@ public class FacebookOAuthService {
 	private static FacebookOAuthService _instance;
 	private static Facebook _facebook;
 	
-	protected FacebookOAuthService()
-	{
-
+	protected FacebookOAuthService() {
 	}
 	
 	public static FacebookOAuthService GetInstance() 

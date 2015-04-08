@@ -66,7 +66,7 @@
 							</div>
 							<div class="4u" >
 								<section class="box style1" style="height: 450px">
-									<span class="icon featured fa-files-o"></span>
+									<span class="icon featured fa-picture-o"></span>
 									<h3>Multiple supported formats</h3>
 									<p style="height: 64px">You will be able to 
 									upload many formats such as jpg, gif, png. </p>
@@ -74,7 +74,7 @@
 							</div>
 							<div class="4u" >
 								<section class="box style1" style="height: 450px">
-									<span class="icon featured fa-fighter-jet"></span>
+									<span class="icon featured fa-download"></span>
 									<h3>Fast Conversion</h3>
 									<p>Process of the image with optimal results in short time</p>
 								</section>
@@ -83,12 +83,8 @@
 					</div>
 				</article>
 			</div>
-
-		<!-- Portfolio -->
-
-		<!-- Contact -->
-			<div class="wrapper style4" style="height: 5px">
-			</div>
-
+			
+		<!-- footer -->
+		<jsp:include page="_footer.jsp" flush="true"/>
 	</body>
 </html>

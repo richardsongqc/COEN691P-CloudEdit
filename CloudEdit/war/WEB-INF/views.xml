@@ -21,4 +21,8 @@
         class="org.springframework.web.servlet.view.JstlView">
         <property name="url" value="signin.jsp" />
     </bean>
+    <bean id="docs"
+    	class="org.springframework.web.servlet.view.JstlView">
+    	<property name="url" value="docs.jsp" />
+    </bean>
 </beans>

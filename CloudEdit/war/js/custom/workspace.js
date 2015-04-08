@@ -86,7 +86,9 @@
     
     $("#openUrl").click( function() {
     	var url = prompt("Please enter an url");
-    	upload_image(url);
+    	if(url != null) {
+    		upload_image(url);
+    	}
     });
     
     $("#openDropbox").click( function() {
@@ -94,7 +96,7 @@
     });
     
     function upload_image(src) {
-    	$.get('upload', {"src": src},
+    	$.get('images/upload', {"src": src},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -211,7 +213,7 @@
     });
     $("#btn-autoAdjust").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('improve', { "src": img_src },
+    	$.get('images/improve', { "src": img_src },
             function(resp) { // on sucess
 				display_image(resp);
             })
@@ -230,7 +232,7 @@
     $("#btn-rotate-apply").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
     	var angle = $("#slider-rotate").slider( "value" );
-    	$.get('rotate', { "src": img_src, "angle": angle},
+    	$.get('images/rotate', { "src": img_src, "angle": angle},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -263,7 +265,7 @@
     	var width = $("#spinner-resize-width").spinner( "value" );
     	var height = $("#spinner-resize-height").spinner( "value" );
     	
-    	$.get('resize', { "src": img_src, "width": width, "height": height },
+    	$.get('images/resize', { "src": img_src, "width": width, "height": height },
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -330,7 +332,7 @@
     	var brightness_level = $("#slider-brightness").slider( "value" );
     	var contrast_level = $("#slider-contrast").slider( "value" );
     	
-    	$.get('exposure', { "src": img_src, "brightness": brightness_level, "contrast": contrast_level},
+    	$.get('images/exposure', { "src": img_src, "brightness": brightness_level, "contrast": contrast_level},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -352,7 +354,7 @@
     	var g = $("#slider-green").slider( "value" );
     	var b = $("#slider-blue").slider( "value" );
     	
-    	$.get('color', { "src": img_src, "r": r, "g": g, "b": b},
+    	$.get('images/color', { "src": img_src, "r": r, "g": g, "b": b},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -409,7 +411,7 @@
     	var saturation = $("#slider-saturation").slider( "value" );
     	var hue = $("#slider-hue").slider( "value" );
     	
-    	$.get('hsv', { "src": img_src, "saturation": saturation, "hue": hue },
+    	$.get('images/hsv', { "src": img_src, "saturation": saturation, "hue": hue },
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -456,7 +458,7 @@
     });
     $("#btn-grayscale").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "grayscale"},
+    	$.get('images/effects', { "src": img_src, "type": "grayscale"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -474,7 +476,7 @@
     });
     $("#btn-negate").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "negate"},
+    	$.get('images/effects', { "src": img_src, "type": "negate"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -492,7 +494,7 @@
     });
     $("#btn-vignette").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "vignette"},
+    	$.get('images/effects', { "src": img_src, "type": "vignette"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -510,7 +512,7 @@
     });
     $("#btn-oilpaint").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "oil_paint"},
+    	$.get('images/effects', { "src": img_src, "type": "oil_paint"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -528,7 +530,7 @@
     });
     $("#btn-gradient-fade").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "gradient_fade"},
+    	$.get('images/effects', { "src": img_src, "type": "gradient_fade"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -546,7 +548,7 @@
     });
     $("#btn-sepia").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
-    	$.get('effects', { "src": img_src, "type": "sepia"},
+    	$.get('images/effects', { "src": img_src, "type": "sepia"},
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -565,7 +567,7 @@
     $("#btn-pixelate-apply").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
     	var value = $("#slider-pixelate").slider( "value" );
-    	$.get('effects', { "src": img_src, "type": "pixelate", "pixelation": value },
+    	$.get('images/effects', { "src": img_src, "type": "pixelate", "pixelation": value },
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -596,7 +598,7 @@
     $("#btn-blur-apply").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
     	var level = $("#slider-blur").slider( "value" );
-    	$.get('effects', { "src": img_src, "type": "blur", "level": level },
+    	$.get('images/effects', { "src": img_src, "type": "blur", "level": level },
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -627,7 +629,7 @@
     $("#btn-sharpen-apply").click( function(event) {
     	var img_src = $("#canvas_img").attr("src");
     	var level = $("#slider-sharpen").slider( "value" );
-    	$.get('effects', { "src": img_src, "type": "sharpen", "level": level },
+    	$.get('images/effects', { "src": img_src, "type": "sharpen", "level": level },
                 function(resp) { // on sucess
     				display_image(resp);
                 })
@@ -663,7 +665,7 @@
     	var pixel = $("#slider-frame-border").slider( "value" );
     	var color = currentHex;
     	
-    	$.get('border', { "src": img_src, "pixel": pixel, "color": color },
+    	$.get('images/border', { "src": img_src, "pixel": pixel, "color": color },
                 function(resp) { // on sucess
     				display_image(resp);
                 })

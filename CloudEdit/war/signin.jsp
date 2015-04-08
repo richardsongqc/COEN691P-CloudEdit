@@ -14,6 +14,9 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/custom/signin.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -54,7 +57,7 @@
 								<h1>Sign in</h1>
 							</header>
 							<p>Enter email and password
-							<form action="login" method="get">
+							<form id="signin-form" action="login" method="get">
 								<input autocomplete="on" name="email" style="left: 5px; top: 0px; width: 70%; height: 39px" type="text" placeholder="email">
 								<input name="password" placeholder="password" style="margin-top:10px;margin-bottom:20px;left: 5px; top: 0px; width: 70%; height: 39px;" type="password">
 								<button type="submit" class="button button-block" style="vertical-align: top;left: 5px; top: 26px">
@@ -72,9 +75,8 @@
 				</article>
 			</div>
       
-		<!-- Contact -->
-			<div class="wrapper style4" style="height: 5px">
-			</div>
+		<!-- footer -->
+		<jsp:include page="_footer.jsp" flush="true"/>
 
 	</body>
 </html>
