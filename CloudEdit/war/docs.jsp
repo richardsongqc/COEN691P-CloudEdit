@@ -54,34 +54,34 @@
 							<div style="width:95%">
 								<section class="doc style2" >
 									<h3><i class="fa fa-arrow-circle-down fa-lg"></i> API Endpoint</h3>
-									<p>http://cloudedit.appspot.com</p>
+									<p><a href="http://cloudedit-coen691p.appspot.com">http://cloudedit-coen691p.appspot.com</a></p>
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Upload an image</h4>
-									<p><b>POST</b> http://cloudedit.appspot.com/images/upload
+									<p><b>POST</b> /images/upload
 									   <br><u>src</u><span>The url of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Rotate</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/rotate
+									<p><b>GET</b> /images/rotate
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>angle</u><span>The angle of rotation in degree</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Resize</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/resize
+									<p><b>GET</b> /images/resize
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>width</u><span>The width (pixel) of the result image</span>
 									   <br><u>height</u><span>The height (pixel) of the result image</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Exposure</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/exposure
+									<p><b>GET</b> /images/exposure
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>brightness</u><span>The brightness level [-100%, 100%]</span>
 									   <br><u>contrast</u><span>The contrast level [-100%, 100%]</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Color</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/color
+									<p><b>GET</b> /images/color
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>R</u><span>The red level [-100%, 100%]</span>
 									   <br><u>G</u><span>The green level [-100%, 100%]</span>
@@ -89,73 +89,73 @@
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> HSV</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/hsv
+									<p><b>GET</b> /images/hsv
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>Hue</u><span>The red level [-100%, 100%]</span>
 									   <br><u>Saturation</u><span>The green level [-100%, 100%]</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: grayscale</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/grayscale
+									<p><b>GET</b> /images/grayscale
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: negate</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/negate
+									<p><b>GET</b> /images/negate
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: grayscale</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/grayscale
+									<p><b>GET</b> /images/grayscale
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: vignette</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/vignette
+									<p><b>GET</b> /images/vignette
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: oil paint</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/oilpaint
+									<p><b>GET</b> /images/oilpaint
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: gradient fade</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/gfade
+									<p><b>GET</b> /images/gfade
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: sepia</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/sepia
+									<p><b>GET</b> /images/sepia
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: pixelate</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/pixelate
+									<p><b>GET</b> /images/pixelate
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>pixel</u><span>pixelation squares</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: blur</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/blur
+									<p><b>GET</b> /images/blur
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>level</u><span>blur level (range: 1-2000)</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: sharpen</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/sharpen
+									<p><b>GET</b> /images/sharpen
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>level</u><span>sharpen level (range: 1-2000)</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Effect: sharpen</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/sharpen
+									<p><b>GET</b> /images/sharpen
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>level</u><span>sharpen level (range: 1-2000)</span>
 									</p>
 									
 									<h4><i class="fa fa-arrow-circle-right fa-lg"></i> Overlay: frame</h4>
-									<p><b>GET</b> http://cloudedit.appspot.com/images/frame
+									<p><b>GET</b> /images/frame
 									   <br><u>public_id</u><span>The public ID of the image you wish to process</span>
 									   <br><u>pixel</u><span>the pixel width of the border</span>
 									</p>

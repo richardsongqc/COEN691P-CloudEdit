@@ -56,7 +56,7 @@
 							<div class="4u" >
 								<section class="box style1" style="height: 450px">
 									<span class="icon featured fa-cloud"></span>
-									<h3>Image conversion in 
+									<h3>Image editing in 
 									the cloud</h3>
 									<p><span>There is no 
 									need to install any software on your 
@@ -67,16 +67,16 @@
 							<div class="4u" >
 								<section class="box style1" style="height: 450px">
 									<span class="icon featured fa-picture-o"></span>
-									<h3>Multiple supported formats</h3>
-									<p style="height: 64px">You will be able to 
-									upload many formats such as jpg, gif, png. </p>
+									<h3>Rich set of tools</h3>
+									<p style="height: 64px">You can do basic edits like resizing,
+									 rotation, adjust RGB and 10+ effects and filters and much more...</p>
 								</section>
 							</div>
 							<div class="4u" >
 								<section class="box style1" style="height: 450px">
 									<span class="icon featured fa-download"></span>
-									<h3>Fast Conversion</h3>
-									<p>Process of the image with optimal results in short time</p>
+									<h3>Save and Share </h3>
+									<p>You can save images to your account on Dropbox, or share to Facebook</p>
 								</section>
 							</div>
 						</div>

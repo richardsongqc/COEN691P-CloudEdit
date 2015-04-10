@@ -677,7 +677,7 @@
     $( "#slider-frame-border" ).slider({
         range: "max",
         min: 5,
-        max: 20,
+        max: 50,
         step: 1,
         value: 5,
         slide: function( event, ui ) {

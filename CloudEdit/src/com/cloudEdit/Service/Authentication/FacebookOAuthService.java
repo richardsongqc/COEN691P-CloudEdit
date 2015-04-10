@@ -1,8 +1,15 @@
 package com.cloudEdit.Service.Authentication;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
+import facebook4j.PostUpdate;
+import facebook4j.PrivacyBuilder;
+import facebook4j.PrivacyParameter;
+import facebook4j.PrivacyType;
 
 public class FacebookOAuthService {
 
